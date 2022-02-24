@@ -47,6 +47,13 @@ int main()
 	
 	// set up vertex data (and buffer(s)) and configure vertex attributes
 	// ------------------------------------------------------------------
+
+	float texCoords[] = {
+		0.0f, 0.0f,
+		1.0f, 0.0f,
+		0.5f, 1.0f
+	};
+
 	float vertices[] = {
 		// positions         // colors
 		 0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,  // bottom right
@@ -66,7 +73,7 @@ int main()
 	// position attribute (void*)0 is the offset of where the position data begins in the buffer.
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
-	// color attribute
+	// color attribute --6 bit with the vertex 3float for location, 3float for color
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
 
