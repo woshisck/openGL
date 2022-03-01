@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <cstdlib>
-
+#include <windows.h>
 
 class FileSystem {
 private:
@@ -16,14 +16,15 @@ public:
 	static std::string const& getRoot() {
 		
 		//hard code, need to change 
-		const char* logl_root = "$(ProjectDir)";
+		//char* logl_root = _getcwd(NULL, 0);
+		char* buffer;
 		
 		
 		//static char const * envRoot = _dupenv_s("LOGL_ROOT_PATH");
 		//static char const* givenRoot = (envRoot != nullptr ? envRoot : logl_root);
 		//static std::string root = (givenRoot != nullptr ? givenRoot : "");
 		//return root;
-		return logl_root;
+		return _getcwd(NULL, 0);
 	}
 
 	static Builder getPathBuilder() {

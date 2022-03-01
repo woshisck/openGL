@@ -57,5 +57,8 @@
     <Image Include="wall.jpg">
       <Filter>Resource Files\Texture</Filter>
     </Image>
+    <Image Include="awesomeface.png">
+      <Filter>Resource Files\Texture</Filter>
+    </Image>
   </ItemGroup>
 </Project>
